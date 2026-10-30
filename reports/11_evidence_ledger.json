@@ -1,0 +1,362 @@
+{
+  "chapter": 11,
+  "scope": "Source-to-memo traceability, no new analytical outcomes or intervention results",
+  "claims": [
+    {
+      "id": "E01",
+      "label": "Observed units",
+      "source_file": "reports/06_baseline_results.json",
+      "json_pointer": "/panels/all_released/counts",
+      "kind": "subset",
+      "expected": {
+        "items": 350,
+        "raters": 123,
+        "n": 43050
+      },
+      "memo_tokens": [
+        "350 conversations and 123 raters"
+      ],
+      "meaning": "Repeated judgments on350 items, not43050 independent contents."
+    },
+    {
+      "id": "E02",
+      "label": "Exact reference agreement",
+      "source_file": "reports/06_baseline_results.json",
+      "json_pointer": "/panels/all_released/metrics/R03",
+      "kind": "ratio",
+      "expected": {
+        "numerator": 24506,
+        "denominator": 43050,
+        "percent_2dp": "56.92%"
+      },
+      "memo_tokens": [
+        "24,506/43,050",
+        "56.92%"
+      ],
+      "meaning": "Frozen fraction with exact denominator; reference-relative, not confirmed operational error."
+    },
+    {
+      "id": "E03",
+      "label": "Conditional agreement interval",
+      "source_file": "reports/08_agreement_results.json",
+      "json_pointer": "/panels/all_released/intervals/R03",
+      "kind": "interval_percent",
+      "expected": {
+        "low": 0.5498257839721254,
+        "high": 0.5888269454123113,
+        "finite_replicates": 10000,
+        "display": "54.98–58.88%"
+      },
+      "memo_tokens": [
+        "54.98–58.88%"
+      ],
+      "meaning": "Conditional whole-item interval; observed raters and reference strata fixed."
+    },
+    {
+      "id": "E04",
+      "label": "Explicit No on unsafe-reference judgments",
+      "source_file": "reports/06_baseline_results.json",
+      "json_pointer": "/panels/all_released/metrics/R10",
+      "kind": "ratio",
+      "expected": {
+        "numerator": 10910,
+        "denominator": 21525,
+        "percent_2dp": "50.69%"
+      },
+      "memo_tokens": [
+        "10,910/21,525",
+        "50.69%"
+      ],
+      "meaning": "Frozen fraction with exact denominator; reference-relative, not confirmed operational error."
+    },
+    {
+      "id": "E05",
+      "label": "Explicit Yes on safe-reference judgments",
+      "source_file": "reports/06_baseline_results.json",
+      "json_pointer": "/panels/all_released/metrics/R12",
+      "kind": "ratio",
+      "expected": {
+        "numerator": 4940,
+        "denominator": 21525,
+        "percent_2dp": "22.95%"
+      },
+      "memo_tokens": [
+        "4,940/21,525",
+        "22.95%"
+      ],
+      "meaning": "Frozen fraction with exact denominator; reference-relative, not confirmed operational error."
+    },
+    {
+      "id": "E06",
+      "label": "Unsure share",
+      "source_file": "reports/06_baseline_results.json",
+      "json_pointer": "/panels/all_released/metrics/R02",
+      "kind": "ratio",
+      "expected": {
+        "numerator": 2694,
+        "denominator": 43050,
+        "percent_2dp": "6.26%"
+      },
+      "memo_tokens": [
+        "2,694/43,050",
+        "6.26%"
+      ],
+      "meaning": "Frozen fraction with exact denominator; reference-relative, not confirmed operational error."
+    },
+    {
+      "id": "E07",
+      "label": "Overlapping exploratory screens",
+      "source_file": "reports/07_diagnostic_results.json",
+      "json_pointer": "/flags",
+      "kind": "screen_counts",
+      "expected": {
+        "miss_review": 95,
+        "restriction_review": 10,
+        "split_review": 108,
+        "uncertainty_review": 40,
+        "any_review": 186
+      },
+      "memo_tokens": [
+        "95, 10, 108 and 40 conversations",
+        "union is 186"
+      ],
+      "meaning": "Analyst-chosen candidate screens; neither audited errors nor disjoint counts."
+    },
+    {
+      "id": "E08",
+      "label": "Nominal alpha",
+      "source_file": "reports/08_agreement_results.json",
+      "json_pointer": "/panels/all_released/point/values/K01",
+      "kind": "coefficient",
+      "expected": {
+        "value": 0.16086021565770403,
+        "display": "0.161"
+      },
+      "memo_tokens": [
+        "Nominal alpha is 0.161"
+      ],
+      "meaning": "Three-response consistency coefficient including Unsure; not accuracy or worker grading."
+    },
+    {
+      "id": "E09",
+      "label": "Conditional alpha interval",
+      "source_file": "reports/08_agreement_results.json",
+      "json_pointer": "/panels/all_released/intervals/K01",
+      "kind": "interval_coefficient",
+      "expected": {
+        "low": 0.13879840204792684,
+        "high": 0.1821949075308622,
+        "finite_replicates": 10000,
+        "display": "0.139–0.182"
+      },
+      "memo_tokens": [
+        "0.139–0.182"
+      ],
+      "meaning": "Coefficient scale; fixed-rater item-cluster inference."
+    },
+    {
+      "id": "E10",
+      "label": "random existing-FN capture",
+      "source_file": "reports/09_audit_results.json",
+      "json_pointer": "/summary/0",
+      "kind": "audit",
+      "expected": {
+        "panel": "all_released",
+        "budget": 35,
+        "strategy": "random",
+        "capture": 0.1002117048579285,
+        "selected_fn_mean": 1093.3097,
+        "population_fn": 10910,
+        "stochastic": true
+      },
+      "memo_tokens": [
+        "35 selected conversations",
+        "mean random existing-FN capture is 10.02%"
+      ],
+      "meaning": "Retrospective inclusion of existing FN judgments, not newly discovered errors. Random/mixed means differ from fixed priority/oracle outcomes."
+    },
+    {
+      "id": "E11",
+      "label": "signal_priority existing-FN capture",
+      "source_file": "reports/09_audit_results.json",
+      "json_pointer": "/summary/1",
+      "kind": "audit",
+      "expected": {
+        "panel": "all_released",
+        "budget": 35,
+        "strategy": "signal_priority",
+        "capture": 0.028964252978918425,
+        "selected_fn_mean": 316.0,
+        "population_fn": 10910,
+        "stochastic": false
+      },
+      "memo_tokens": [
+        "fixed priority captures 2.90%"
+      ],
+      "meaning": "Retrospective inclusion of existing FN judgments, not newly discovered errors. Random/mixed means differ from fixed priority/oracle outcomes."
+    },
+    {
+      "id": "E12",
+      "label": "mixed existing-FN capture",
+      "source_file": "reports/09_audit_results.json",
+      "json_pointer": "/summary/2",
+      "kind": "audit",
+      "expected": {
+        "panel": "all_released",
+        "budget": 35,
+        "strategy": "mixed",
+        "capture": 0.07300072410632448,
+        "selected_fn_mean": 796.4379,
+        "population_fn": 10910,
+        "stochastic": true
+      },
+      "memo_tokens": [
+        "mean mixed capture is 7.30%"
+      ],
+      "meaning": "Retrospective inclusion of existing FN judgments, not newly discovered errors. Random/mixed means differ from fixed priority/oracle outcomes."
+    },
+    {
+      "id": "E13",
+      "label": "oracle_ceiling existing-FN capture",
+      "source_file": "reports/09_audit_results.json",
+      "json_pointer": "/summary/3",
+      "kind": "audit",
+      "expected": {
+        "panel": "all_released",
+        "budget": 35,
+        "strategy": "oracle_ceiling",
+        "capture": 0.30449129239230066,
+        "selected_fn_mean": 3322.0,
+        "population_fn": 10910,
+        "stochastic": false
+      },
+      "memo_tokens": [
+        "known-label oracle ceiling of 30.45%"
+      ],
+      "meaning": "Retrospective inclusion of existing FN judgments, not newly discovered errors. Random/mixed means differ from fixed priority/oracle outcomes."
+    },
+    {
+      "id": "E14",
+      "label": "new_real_reviews_performed",
+      "source_file": "reports/09_audit_results.json",
+      "json_pointer": "/new_real_reviews_performed",
+      "kind": "scalar",
+      "expected": 0,
+      "memo_tokens": [
+        "actual new reviews"
+      ],
+      "meaning": "Observed status of portfolio work; all new-review/calibration actions remain proposed."
+    },
+    {
+      "id": "E15",
+      "label": "labels_changed",
+      "source_file": "reports/09_audit_results.json",
+      "json_pointer": "/labels_changed",
+      "kind": "scalar",
+      "expected": 0,
+      "memo_tokens": [
+        "label changes"
+      ],
+      "meaning": "Observed status of portfolio work; all new-review/calibration actions remain proposed."
+    },
+    {
+      "id": "E16",
+      "label": "actual_coaching_performed",
+      "source_file": "reports/09_audit_results.json",
+      "json_pointer": "/actual_coaching_performed",
+      "kind": "scalar",
+      "expected": false,
+      "memo_tokens": [
+        "completed coaching remain zero"
+      ],
+      "meaning": "Observed status of portfolio work; all new-review/calibration actions remain proposed."
+    },
+    {
+      "id": "E17",
+      "label": "measured_post_calibration_gain",
+      "source_file": "reports/09_audit_results.json",
+      "json_pointer": "/measured_post_calibration_gain",
+      "kind": "scalar",
+      "expected": null,
+      "memo_tokens": [
+        "not newly discovered errors or measured quality gains"
+      ],
+      "meaning": "Observed status of portfolio work; all new-review/calibration actions remain proposed."
+    },
+    {
+      "id": "E18",
+      "label": "Q2 contributions within overall FP",
+      "source_file": "reports/07_diagnostic_results.json",
+      "json_pointer": "/fp_group_triggers/0",
+      "kind": "subset",
+      "expected": {
+        "question_group": "Q2",
+        "granular_questions": 9,
+        "cohort_records": 4940,
+        "yes_records": 3069
+      },
+      "memo_tokens": [],
+      "meaning": "Overlapping aggregator contribution, not question-specific false-positive rate."
+    },
+    {
+      "id": "E19",
+      "label": "FN aggregation identity",
+      "source_file": "reports/07_diagnostic_results.json",
+      "json_pointer": "/fn_all_granular_no",
+      "kind": "subset",
+      "expected": {
+        "overall_fn_records": 10910,
+        "granular_answers_per_record": 19,
+        "non_no_granular_answers": 0
+      },
+      "memo_tokens": [],
+      "meaning": "All granular responses No is an identity of the aggregation rule and does not identify one causal question."
+    }
+  ],
+  "protected_input_sha256": {
+    "data/processed/project02.sqlite": "8eba76937d79a1a66dcb085b7b42cf6ef546eead34e3281c4ebef743b8415877",
+    "docs/04_qa_metric_contract.json": "f0dc7d8f36515aa36be7ce83657c896a83a6b0c2b35191fe364351e29a2899b3",
+    "data/raw/dices350/diverse_safety_adversarial_dialog_350.csv": "63cb8620eb04e64957f9e45b1f7cb3d079c4eed8e8b28909f46e0b7038ce4301",
+    "src/qa_metrics.py": "e72d7fc6bcd249d800ff6fb88e94c2561e95c0b3163948cff81be59f640a2999",
+    "sql/04_reference_scorecard.sql": "ff399ab0635d6443936df9e9268e2b0b38c48934063d83835ed40562aa4f8d8e",
+    "sql/04_item_metrics.sql": "fa88ba9f16c4d0a0da5b3f597e7afdd15536636cc44167df043b77a856b7afea",
+    "data/work/ch03_annotation_audit.sqlite": "d21cbae62a1d35c8deb527340970cc56af5c958b769a867e851454300e563f35",
+    "reports/06_baseline_results.json": "b20b088a7ae546fb5b4ba3dabac17b0f2eb8273ab062a493ddc4e75b5afd4fc4",
+    "reports/07_diagnostic_results.json": "a23063ead9327c7f9cd8849297c566c6c09233851d69b80d1be313932e0adf9a",
+    "references/google_dices/commit.json": "4cb8407a2f9933721e2f8357399136f2e5db1880801f3c914c31b85342cb1ff7",
+    "references/google_dices/README.md": "56a96025cd180d6c9e43c8477899819ae5722f40dbe4d35ace48f7c2cd24c491",
+    "references/google_dices/350_README.md": "0e9d5b8fa1ae3d102a77ca4f773a2551b9c0a56f88f5cf825e5db2d405ebd5f3",
+    "reports/08_agreement_results.json": "6e60aa53f2a423669d5f5148b9eead8475612fc5ea04cb7c9cb680361c17d4de",
+    "sql/08_item_panel_counts.sql": "8bbb4b05c57d7235b976e72977ed1e186c0d571ee91ce1d2bf02d9dde18f357f",
+    "reports/09_audit_results.json": "8c8ae6d1560a1874927ba0b2b2c1d0b0fc4850ed057de0e05ab127d4c2d36376",
+    "dashboards/powerbi_web/Project02_PowerBI_Input.xlsx": "66ec14658781394d946b5c71b0b545a292d532f14bc7035e213ac87bd3af3607",
+    "dashboards/powerbi_web/Project02_Content_Safety_QA.pbix": "6aa52ffd1cb1163ca2ab87dc45449d3901ca038106078abf70228f1c26a93749",
+    "dashboards/powerbi_web/10_native_validation_summary.txt": "a1689763d759222dcb1cc2f5acf76dda0cd2a33ca2de146bb72539b885cc7bf6",
+    "dashboards/powerbi_web/10_measures.tmdl": "6cbcea6c0d1f1c9a3a8f20695c2f650dca131cc23ad73159701adf54ef4405d2",
+    "dashboards/powerbi_web/10_native_validation_summary.dax": "1fc22f37a0edaf6e230e0740c6030065c0e0655a1f9a0cee93678b6cbcc05cf3",
+    "dashboards/powerbi_web/10_page_urls.json": "a2797fcdc71a8255b06e2c2e329e8ac757ed1a84559c4fa79aff3285ba2ff85f",
+    "dashboards/powerbi_web/10_filter_published104.txt": "b844758fb5daa190abe0f351e8e0bd1d55a6672b3f133f4492127a87d3446820",
+    "dashboards/powerbi_web/10_filter_budget70.txt": "b6349b3268d315b83f10806fafa9fcea29fb725114263b0b3386d0694ed2c114",
+    "dashboards/powerbi_web/screenshots/01_Overview.jpg": "74e73cf883f53737c9ff605c7b8c632cbc822fc567c1a3aa3d860a840a17ea8e",
+    "dashboards/powerbi_web/screenshots/02_Reference_Scorecard.jpg": "6c79a0a561ebaebd9c3c12c53f1702a34041909a117191dceb581d132c9dd27e",
+    "dashboards/powerbi_web/screenshots/03_Risk_Diagnostics.jpg": "95676f15ec2d0df173cbbc4cadb7ace7fa55ba72a374d6a8ba4ea7c756a4838a",
+    "dashboards/powerbi_web/screenshots/04_Agreement_Uncertainty.jpg": "7b4572903ad2b1cd96c85f947ce065f00d8359ad2d28ee11c5dfeabdae8fe003",
+    "dashboards/powerbi_web/screenshots/05_Audit_Simulation.jpg": "91138c4db571613af2fbf226a4ff312557a973db9c69bbaf0618659d0b662f58",
+    "dashboards/powerbi_web/screenshots/06_Review_Calibration.jpg": "0ffd9a4ef1f841f2e54d3d0f0b3a6e6b67c571e3227c7cac4b1bf71ccfdb27d5",
+    "reports/10_completion_checks.json": "3f3ba20dd9265399c79f46df4f77f1675e439fc4f43069a1ab6f63925f23999b"
+  },
+  "allowed_rolling_document_updates": [
+    "learning/01_start_here_ko.md",
+    "docs/01_qa_brief.md",
+    "docs/progress.md",
+    "README.md",
+    "reproduce.md",
+    "src/learn_project.py",
+    "../PROJECTS.md"
+  ],
+  "source_interpretation": {
+    "interval": "Conditional reference-stratified whole-conversation bootstrap, fixed observed panels",
+    "capture": "ExistingFN judgment mass inside selected conversations / all existingFN judgments",
+    "actions": "Proposed roles and actions only; all350 existing items informed exploration; no untouched holdout reserved"
+  }
+}
