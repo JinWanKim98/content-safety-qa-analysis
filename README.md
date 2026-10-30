@@ -14,6 +14,7 @@ I used Google's DICES-350 dataset: 350 conversations between people and a chatbo
 - [SQL queries](analysis.sql)
 - [Power BI report](Content_Safety_QA.pbix)
 - [Dashboard pages as PDF](Dashboard.pdf)
+- [Full result tables (PDF)](Tables.pdf)
 - [Decision memo](reports/11_qa_executive_memo.md)
 
 ## Data and scope
@@ -34,26 +35,32 @@ pip install -r requirements.txt
 
 Report pages are below. Click an image to open its full resolution.
 
-### 01 Overview
+### 01 Content safety judgments
 
 [![Dashboard page](images/01_overview.png)](images/01_overview.png)
 
-### 02 Reference Scorecard
+### 02 Agreement with the expert reference
 
 [![Dashboard page](images/02_reference_scorecard.png)](images/02_reference_scorecard.png)
 
-### 03 Risk Diagnostics
+### 03 Where judgments differ
 
 [![Dashboard page](images/03_risk_diagnostics.png)](images/03_risk_diagnostics.png)
 
-### 04 Agreement Uncertainty
+### 04 Uncertainty in the study
 
 [![Dashboard page](images/04_agreement_uncertainty.png)](images/04_agreement_uncertainty.png)
 
-### 05 Audit Simulation
+### 05 Which cases would be reviewed?
 
 [![Dashboard page](images/05_audit_simulation.png)](images/05_audit_simulation.png)
 
-### 06 Review Calibration
+### 06 Review checks and example routes
 
 [![Dashboard page](images/06_review_calibration.png)](images/06_review_calibration.png)
+
+## Dashboard reading notes
+
+Risk codes remain in the underlying model for traceability. FNR counts unsafe references marked safe; FPR counts safe references marked unsafe. Decisive judgments exclude Unsure. Risk groups are shown only with at least 10 conversations, 10 raters and 100 judgments; topic groups overlap. Resampling intervals condition on the observed raters.
+
+The audit strategy “Fixed priority (most severe first)” uses the fixed most-severe-first rule described above. Random and mixed strategies use 10,000 draws; priority and oracle strategies are deterministic. Selection ranges are not confidence intervals. Weighted estimates require positive inclusion probabilities. The review and calibration page contains screening counts and synthetic examples. No new reviews or label changes were made.

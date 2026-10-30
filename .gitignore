@@ -17,7 +17,6 @@ rebuild.json
 # Kept on the local machine only (working files, full rebuild tooling, notes)
 LEARNING_KO.md
 Results.html
-Tables.pdf
 execution_check.json
 reproduce.py
 REPRODUCING.md
